@@ -22,16 +22,19 @@
    
     //Takes the sum of the add function and puts it in an nsnumber
     NSNumber *sum = [[NSNumber alloc] initWithInt:addFunction];
+    
     //Check for nil
     if (sum != nil)
     {
+        
         //Converts the number to a string
-        NSString *sumStr = [NSString stringWithFormat:@"The number is %d", sum];
+        NSString *sumStr = [sum stringValue];
+        NSString *numberString = [NSString stringWithFormat:@"The number is %@", sumStr];
         //Check
         if (sumStr != nil)
         {
             //Displays alert with total
-            [self DisplayAlertWithString:sumStr];
+            [self DisplayAlertWithString:numberString];
         }
     }
     
@@ -51,8 +54,8 @@
     }
     
     //Calls the Append function, sets parameters
-    NSString *stringOne = [[NSString alloc] initWithFormat:(NSString*) @"Hi there, I'm "];
-    NSString *stringTwo = [[NSString alloc] initWithFormat:(NSString*) @"David"];
+    NSString *stringOne = @"Hi there, I'm ";
+    NSString *stringTwo = @"David";
     NSString *finalString = [self Append:stringOne Append2:stringTwo];
     
     [self DisplayAlertWithString:finalString];
